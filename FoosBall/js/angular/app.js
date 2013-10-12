@@ -1,5 +1,20 @@
 ﻿angular.
-    module('FoosBall', ['ngRoute', 'ngResource']).
+    module('FoosBall', ['ngRoute', 'ngResource', 'ng']).
+    config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
+        $routeProvider
+            .when('/', { templateUrl: '/partials/home.html' })
+            .when('/features', { templateUrl: '/partials/features.html' })
+            .when('/stats', { templateUrl: '/partials/stats.html', controller: StatsController })
+            .when('/playerstats', { templateUrl: '/partials/stats-player.html', controller: PlayerStatsController })
+            .when('/matches', { templateUrl: '/partials/matches.html', controller: MatchesController })
+            .when('/players', { templateUrl: '/partials/players.html', controller: PlayersController })
+            .when('/user-profile', { templateUrl: '/partials/user-profile.html', controller: UserController })
+            .when('/sign-up', { templateUrl: '/partials/user-register.html', controller: UserController })
+            .when('/admin', { templateUrl: '/admin.html', controller: AdminController })
+            .otherwise({ redirectTo: '/' });
+
+        $locationProvider.html5Mode(true);
+    }]).
     // The session service provides methods for users to login, logout and getting server session 
     service('session', function ($resource) {
         var self = this;
@@ -49,19 +64,6 @@
         };
         
     }).
-    config(['$routeProvider', function($routeProvider) {
-        $routeProvider
-            .when('/', { templateUrl: '/partials/home.html' })
-            .when('/features', { templateUrl: '/partials/features.html' })
-            .when('/stats', { templateUrl: '/partials/stats.html', controller: StatsController })
-            .when('/playerstats', { templateUrl: '/partials/stats-player.html', controller: PlayerStatsController })
-            .when('/matches', { templateUrl: '/partials/matches.html', controller: MatchesController })
-            .when('/players', { templateUrl: '/partials/players.html', controller: PlayersController })
-            .when('/user-profile', { templateUrl: '/partials/user-profile.html', controller: UserController })
-            .when('/sign-up', { templateUrl: '/partials/user-register.html', controller: UserController })
-            .when('/admin', { templateUrl: '/admin.html', controller: AdminController })
-            .otherwise({ redirectTo: '/' });
-    }]).
     directive('foosballScore', function () {
         return {
             require: 'ngModel',

@@ -9,7 +9,6 @@
     $scope.logout = function() {
         session.logout($scope);
     };
-    
 
     $scope.showLogonMenu = function () {
         $scope.uiSettings.hideLogonMenu = !$scope.uiSettings.hideLogonMenu;

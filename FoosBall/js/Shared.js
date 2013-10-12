@@ -1,25 +1,5 @@
-﻿jQuery(document).ready(function() {
-    // ******************************************************************
-    // Menu highlighting and animation 
-    //
-    var $menu = $('#main-menu');
-
-    // redirect on menu-item click
-    $menu.on('click', 'li', function (event) {
-        event.preventDefault();
-        var redirectUrl;
-        var $target = $(event.target);
-
-        if ($target.is('li')) {
-            redirectUrl = $target.children('a').attr('href');
-        } else if ($target.is('a')) {
-            redirectUrl = $target.attr('href');
-        }
-
-        if (redirectUrl) {
-            window.location = redirectUrl;
-        }
-    });
+﻿jQuery(document).ready(function () {
+    
 });
 
 function toggleOverlay() {

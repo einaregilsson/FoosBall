@@ -232,8 +232,6 @@
       <DependentUpon>Web.config</DependentUpon>
     </Content>
     <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Shared\Error.cshtml" />
-    <Content Include="Views\Shared\_LogOnPartial.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Web.config" />
     <Content Include="css\modules\Admin.scss">
@@ -242,14 +240,17 @@
       <CompileStyle>Nested</CompileStyle>
       <DebugInfo>False</DebugInfo>
     </Content>
-    <Content Include="Views\Admin\Index.cshtml" />
-    <Content Include="Views\Stats\Player.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="js\lib\minified\" />
     <Folder Include="js\minified\" />
     <Folder Include="Views\Account\" />
+    <Folder Include="Views\Admin\" />
+    <Folder Include="Views\Home\" />
+    <Folder Include="Views\Matches\" />
+    <Folder Include="Views\Players\" />
+    <Folder Include="Views\Stats\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -258,18 +259,12 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Shared\_RegisterMatch.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="css\modules\Base.scss">
       <Compile>False</Compile>
       <Minify>True</Minify>
       <CompileStyle>Nested</CompileStyle>
       <DebugInfo>False</DebugInfo>
     </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Shared\_PlayerBaseData.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="css\modules\Matches.scss">
@@ -307,9 +302,6 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Shared\_MatchTemplate.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="css\foosball.scss">
       <Compile>True</Compile>
       <Minify>True</Minify>
@@ -324,20 +316,6 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Home\Index.cshtml">
-      <SubType>Code</SubType>
-    </Content>
-    <Content Include="Views\Matches\Index.cshtml">
-      <SubType>Code</SubType>
-    </Content>
-    <Content Include="Views\Stats\Index.cshtml">
-      <SubType>Code</SubType>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Players\Index.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="js\lib\jquery.min.js.map">
       <DependentUpon>jquery.js</DependentUpon>
     </Content>
@@ -349,6 +327,9 @@
       <CompileStyle>Nested</CompileStyle>
       <DebugInfo>False</DebugInfo>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\Index.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -104,7 +104,6 @@ page width. Or, you can specify an exact pixel width. */
             border-bottom: 1px solid $seperator-color;
             list-style: none;
             display: list-item; 
-            padding: 10px 15px;
             margin: 0;
             width: 100%;
             cursor: pointer;
@@ -123,7 +122,9 @@ page width. Or, you can specify an exact pixel width. */
             }
 
             a, a:hover {
+                display: block;
                 text-decoration: none;
+                padding: 10px 15px;
             }
         }
     }
