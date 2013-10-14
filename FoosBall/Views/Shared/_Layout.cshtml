@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="robots" content="noindex">
     <link rel="shortcut icon" href="https://s3-eu-west-1.amazonaws.com/images.trustpilot.com/static/foosball/favicon.ico" type="image/x-icon" />
-
+    <base href="/">
     <title>
         @if (ViewBag.Settings.Environment.ToString() != "Production")
         {
@@ -67,7 +67,7 @@
     <img src="https://s3-eu-west-1.amazonaws.com/images.trustpilot.com/static/foosball/background.jpg" id="bg" class="bgwidth" alt="background image"/>
     
     <header ng-cloak>
-        <a href ng-href="/#/">
+        <a href ng-href="/">
             <div id="app-title">
                 <div class="logo-picture">
                     <img src="https://s3-eu-west-1.amazonaws.com/images.trustpilot.com/static/foosball/icon_football.png" alt="logo"/>
@@ -85,12 +85,12 @@
         <nav data-debug="{uiSettings.{hideMainMenu}}" >
             <div class="main-menu-arrow menu-arrow" ng-hide="uiSettings.hideMainMenu"></div>
             <ul id="main-menu" class="menu" ng-hide="uiSettings.hideMainMenu">
-                <li ng-click="uiSettings.hideMainMenu = !uiSettings.hideMainMenu" class="Home"><a class="main-menu-item" ng-href="/#/">Home</a></li>
-                <li ng-click="uiSettings.hideMainMenu = !uiSettings.hideMainMenu" class="Scoreboard"><a class="main-menu-item" ng-href="/#/players">Scoreboard</a></li>
-                <li ng-click="uiSettings.hideMainMenu = !uiSettings.hideMainMenu" class="Matches"><a class="main-menu-item" ng-href="/#/matches">Matches</a></li>
-                <li ng-click="uiSettings.hideMainMenu = !uiSettings.hideMainMenu" class="Stats"><a class="main-menu-item" ng-href="/#/stats">Stats</a></li>
-                <li ng-click="uiSettings.hideMainMenu = !uiSettings.hideMainMenu" class="Features"><a class="main-menu-item" ng-href="/#/features">Features</a></li>
-                <li ng-click="uiSettings.hideMainMenu = !uiSettings.hideMainMenu" ng-if="session.IsLoggedIn && session.IsAdmin" ng-click="uiSettings.hideMainMenu = !uiSettings.hideMainMenu" class="Admin"><a class="main-menu-item" ng-href="/#/Admin">Admin</a></li>
+                <li ng-click="uiSettings.hideMainMenu = !uiSettings.hideMainMenu" class="Home"><a class="main-menu-item" ng-href="/">Home</a></li>
+                <li ng-click="uiSettings.hideMainMenu = !uiSettings.hideMainMenu" class="Scoreboard"><a class="main-menu-item" ng-href="/players">Scoreboard</a></li>
+                <li ng-click="uiSettings.hideMainMenu = !uiSettings.hideMainMenu" class="Matches"><a class="main-menu-item" ng-href="/matches">Matches</a></li>
+                <li ng-click="uiSettings.hideMainMenu = !uiSettings.hideMainMenu" class="Stats"><a class="main-menu-item" ng-href="/stats">Stats</a></li>
+                <li ng-click="uiSettings.hideMainMenu = !uiSettings.hideMainMenu" class="Features"><a class="main-menu-item" ng-href="/features">Features</a></li>
+                <li ng-click="uiSettings.hideMainMenu = !uiSettings.hideMainMenu" ng-if="session.IsLoggedIn && session.IsAdmin" ng-click="uiSettings.hideMainMenu = !uiSettings.hideMainMenu" class="Admin"><a class="main-menu-item" ng-href="/Admin">Admin</a></li>
             </ul> 
         </nav>
 
@@ -102,11 +102,11 @@
         <div class="login-display">
             <div ng-if="session.IsLoggedIn" class="menu-account-info">
                 Hi {{session.User.Name}}
-                [ <a href ng-href="/#/user-profile">Account</a> &middot; <a href ng-click="logout()">Log out</a> ]
+                [ <a href ng-href="/user-profile">Account</a> &middot; <a href ng-click="logout()">Log out</a> ]
             </div>
 
             <div ng-if="!session.IsLoggedIn" class="menu-login-info">
-                <a href ng-click="showLogonMenu()">Log on</a> or <a ng-href="/#/sign-up">Sign up</a>
+                <a href ng-click="showLogonMenu()">Log on</a> or <a ng-href="/sign-up">Sign up</a>
             </div>
 
             <div class="menu-list-button">

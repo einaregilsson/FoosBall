@@ -1,4 +1,4 @@
-﻿function UserController($scope, $resource, session) {
+﻿FoosBall.controller('UserController', ['$scope', '$resource', 'session', function ($scope, $resource, session) {
     $scope.user = {};
     $scope.updateMessage;
     $scope.showValidationMessage = false;
@@ -47,6 +47,5 @@
     }
 
     $scope.getPlayer();
-}
 
-UserController.$inject = ['$scope', '$resource','session'];
+}]);

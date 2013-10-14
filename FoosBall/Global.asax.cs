@@ -1,7 +1,5 @@
 ﻿namespace FoosBall
 {
-    using System.Collections.Generic;
-    using System.Web;
     using System.Web.Mvc;
     using System.Web.Routing;
     using Main;
@@ -23,7 +21,6 @@
                 "Default", // Route name
                 "{controller}/{action}/{id}", // URL with parameters
                 new { controller = "Home", action = "Index", id = UrlParameter.Optional }); // Parameter defaults
-
         }
 
         protected void Application_Start()
@@ -42,15 +39,15 @@
 
         protected void Application_BeginRequest()
         {
-            //if (Request.IsLocal)
-            //{ 
-            //    MiniProfiler.Start();
-            //} 
+            ////if (Request.IsLocal)
+            ////{ 
+            ////    MiniProfiler.Start();
+            ////} 
         }
 
         protected void Application_EndRequest()
         {
-            //MiniProfiler.Stop();
+            ////MiniProfiler.Stop();
         }
     }
 }
